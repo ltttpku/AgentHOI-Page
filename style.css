@@ -106,7 +106,7 @@ p {
 h1 {
   max-width: 1050px;
   margin: 0;
-  font-size: clamp(2.05rem, 5vw, 4.4rem);
+  font-size: clamp(1.85rem, 4.1vw, 3.7rem);
   line-height: 1.04;
   letter-spacing: 0;
 }
@@ -185,6 +185,7 @@ main {
 }
 
 .teaser-section {
+  width: min(980px, calc(100% - 40px));
   padding: 28px 0 8px;
 }
 
@@ -367,7 +368,7 @@ footer a {
   }
 
   h1 {
-    font-size: clamp(1.9rem, 10vw, 3rem);
+    font-size: clamp(1.7rem, 8.5vw, 2.55rem);
   }
 
   .actions {
