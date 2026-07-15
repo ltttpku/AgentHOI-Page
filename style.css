@@ -265,12 +265,23 @@ h3 {
   display: grid;
   grid-template-columns: 1.1fr 0.95fr 0.95fr;
   gap: 18px;
-  align-items: stretch;
+  align-items: start;
 }
 
 .result-grid .media-frame {
   display: flex;
   align-items: center;
+}
+
+.result-item {
+  margin: 0;
+}
+
+.result-item figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.45;
 }
 
 .citation {
