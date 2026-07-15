@@ -159,6 +159,212 @@
       </div>
     </section>
 
+    <section class="section quantitative">
+      <div class="section-heading">
+        <p class="eyebrow">Quantitative Results</p>
+        <h2>Main experimental results</h2>
+        <p class="body-text">
+          AgentHOI achieves strong performance without HOI-specific training,
+          showing competitive generalization on HICO-DET and SWIG-HOI. Table
+          values are mAP unless otherwise noted.
+        </p>
+      </div>
+
+      <div class="metric-cards" aria-label="Key AgentHOI metrics">
+        <article>
+          <span>HICO-DET Full</span>
+          <strong>29.61</strong>
+          <small>mAP</small>
+        </article>
+        <article>
+          <span>HICO-DET Rare</span>
+          <strong>40.33</strong>
+          <small>mAP</small>
+        </article>
+        <article>
+          <span>SWIG-HOI Unseen</span>
+          <strong>11.61</strong>
+          <small>mAP</small>
+        </article>
+        <article>
+          <span>HOI Recognition</span>
+          <strong>64.91</strong>
+          <small>F1</small>
+        </article>
+      </div>
+
+      <div class="table-grid">
+        <article class="table-panel">
+          <h3>HICO-DET Default Setting</h3>
+          <p>Comparison with weakly-supervised HOI detectors.</p>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Full</th>
+                  <th>Rare</th>
+                  <th>Non-Rare</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Align-Former</td>
+                  <td>20.85</td>
+                  <td>18.23</td>
+                  <td>21.64</td>
+                </tr>
+                <tr>
+                  <td>Weakly-HOI</td>
+                  <td>25.70</td>
+                  <td>24.52</td>
+                  <td>26.05</td>
+                </tr>
+                <tr>
+                  <td>OpenCat</td>
+                  <td>25.82</td>
+                  <td>24.35</td>
+                  <td>26.19</td>
+                </tr>
+                <tr class="best">
+                  <td>AgentHOI</td>
+                  <td>29.61</td>
+                  <td>40.33</td>
+                  <td>26.41</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="table-panel">
+          <h3>HICO-DET Zero-Shot Unseen</h3>
+          <p>AgentHOI reports strong unseen-class mAP across original and shifted images.</p>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Setting</th>
+                  <th>UV</th>
+                  <th>UO</th>
+                  <th>RF-UC</th>
+                  <th>NF-UC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="best">
+                  <td>Original</td>
+                  <td>29.85</td>
+                  <td>33.70</td>
+                  <td>38.64</td>
+                  <td>28.04</td>
+                </tr>
+                <tr class="best">
+                  <td>Style-transferred</td>
+                  <td>26.45</td>
+                  <td>28.34</td>
+                  <td>32.55</td>
+                  <td>23.05</td>
+                </tr>
+                <tr class="best">
+                  <td>Degraded</td>
+                  <td>27.61</td>
+                  <td>28.99</td>
+                  <td>34.79</td>
+                  <td>24.56</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="table-panel">
+          <h3>SWIG-HOI</h3>
+          <p>Generalization to another large-vocabulary HOI benchmark.</p>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Full</th>
+                  <th>Rare</th>
+                  <th>Non-Rare</th>
+                  <th>Unseen</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>THID</td>
+                  <td>13.26</td>
+                  <td>12.82</td>
+                  <td>17.67</td>
+                  <td>10.04</td>
+                </tr>
+                <tr>
+                  <td>CMD-SE</td>
+                  <td>15.26</td>
+                  <td>14.64</td>
+                  <td>21.46</td>
+                  <td>10.70</td>
+                </tr>
+                <tr>
+                  <td>AgentHOI-Base</td>
+                  <td>9.64</td>
+                  <td>9.35</td>
+                  <td>10.24</td>
+                  <td>8.74</td>
+                </tr>
+                <tr class="best">
+                  <td>AgentHOI</td>
+                  <td>13.00</td>
+                  <td>13.01</td>
+                  <td>14.45</td>
+                  <td>11.61</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="table-panel">
+          <h3>Module Ablation</h3>
+          <p>CMR and MIL provide complementary gains on HICO-DET.</p>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th>Method</th>
+                  <th>Full</th>
+                  <th>Rare</th>
+                  <th>Non-Rare</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>AgentHOI-Base</td>
+                  <td>19.44</td>
+                  <td>22.00</td>
+                  <td>18.68</td>
+                </tr>
+                <tr>
+                  <td>+ CMR</td>
+                  <td>23.20</td>
+                  <td>31.99</td>
+                  <td>20.57</td>
+                </tr>
+                <tr class="best">
+                  <td>+ MIL</td>
+                  <td>29.61</td>
+                  <td>40.33</td>
+                  <td>26.41</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section id="citation" class="section citation">
       <div>
         <p class="eyebrow">Citation</p>
