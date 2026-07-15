@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AgentHOI: a training-free, agentic framework for human-object interaction detection in the wild.">
+  <title>AgentHOI | ECCV 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#">AgentHOI</a>
+      <div class="nav-links">
+        <a href="#abstract">Abstract</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#citation">BibTeX</a>
+      </div>
+    </nav>
+
+    <section class="hero-content">
+      <p class="venue">ECCV 2026</p>
+      <h1>Unleashing Multimodal Large Language Models for Training-free HOI Detection in the Wild</h1>
+      <p class="subtitle">
+        AgentHOI reformulates human-object interaction detection as a structured
+        reasoning-and-grounding process, requiring no HOI-specific training data
+        or parameter updates.
+      </p>
+
+      <p class="authors">
+        <span>Ting Lei*</span>
+        <span>Jialin Liu*</span>
+        <span>Zhu Xu</span>
+        <span>Yuxin Peng</span>
+        <span>Yang Liu</span>
+      </p>
+      <p class="affiliation">Wangxuan Institute of Computer Technology, Peking University</p>
+      <p class="note">* Equal contribution</p>
+
+      <div class="actions" aria-label="Project links">
+        <a class="button primary" href="https://github.com/oceanflowlab/AgentHOI">Code</a>
+        <a class="button" href="#citation">Citation</a>
+        <a class="button muted" href="#" aria-disabled="true">Paper coming soon</a>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="teaser-section" aria-label="Project teaser">
+      <div class="wide-media">
+        <img src="assets/figures/teaser.png" alt="AgentHOI compares traditional supervised HOI detectors with a training-free agentic framework.">
+      </div>
+    </section>
+
+    <section id="abstract" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Overview</p>
+        <h2>Training-free HOI detection for open-world scenes</h2>
+      </div>
+      <p class="body-text">
+        Human-object interaction detection has traditionally been formulated as
+        supervised detection over predefined interaction categories. This closed-set
+        paradigm limits generalization to open-world and compositional scenarios,
+        where interaction patterns are diverse, long-tailed, and often ambiguous.
+      </p>
+      <p class="body-text">
+        AgentHOI is a training-free, agentic framework that transfers the generalist
+        multimodal reasoning capability of foundation models to structured HOI
+        detection. Instead of learning interaction classifiers, it orchestrates
+        complementary vision foundation modules for open-ended semantic reasoning
+        and spatial grounding.
+      </p>
+    </section>
+
+    <section class="section highlights">
+      <article>
+        <h3>Training-free</h3>
+        <p>No HOID data, task-specific classifier, or parameter update is required.</p>
+      </article>
+      <article>
+        <h3>Open-ended reasoning</h3>
+        <p>MLLMs infer plausible human-action-object triplets beyond fixed vocabularies.</p>
+      </article>
+      <article>
+        <h3>Precise grounding</h3>
+        <p>Instance-specific descriptions help localize ambiguous human-object pairs.</p>
+      </article>
+    </section>
+
+    <section id="method" class="section split">
+      <div>
+        <p class="eyebrow">Method</p>
+        <h2>Agentic reasoning and localization</h2>
+        <p class="body-text">
+          AgentHOI coordinates a multimodal perception module and a spatial
+          localization module. Context-aware multi-round reasoning progressively
+          discovers missed interactions, while multifaceted interaction localization
+          enriches grounding prompts with semantic, spatial, and appearance cues.
+        </p>
+      </div>
+      <div class="media-frame">
+        <img src="assets/figures/AgentHOI_v2.png" alt="AgentHOI pipeline with multi-round reasoning and interaction localization.">
+      </div>
+    </section>
+
+    <section class="section split reverse">
+      <div class="media-frame">
+        <img src="assets/figures/demo.png" alt="Example showing initial HOI identification, re-mining, and action reassignment.">
+      </div>
+      <div>
+        <p class="eyebrow">Reasoning</p>
+        <h2>Recovering incomplete interactions</h2>
+        <p class="body-text">
+          In cluttered scenes, a single MLLM query may focus on only the most
+          salient triplets. AgentHOI uses identified interactions as contextual
+          anchors, re-mines additional HOIs, and reassigns fine-grained actions
+          to improve interaction completeness.
+        </p>
+      </div>
+    </section>
+
+    <section id="results" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Analysis</p>
+        <h2>Robustness in complex real-world settings</h2>
+      </div>
+      <div class="result-grid">
+        <div class="media-frame">
+          <img src="assets/figures/metrics2round.png" alt="Metrics comparing reasoning strategies in single-HOI and multi-HOI scenes.">
+        </div>
+        <div class="media-frame">
+          <img src="assets/figures/query2.png" alt="Interaction localization without multifaceted descriptions.">
+        </div>
+        <div class="media-frame">
+          <img src="assets/figures/query3.png" alt="Interaction localization with multifaceted descriptions.">
+        </div>
+      </div>
+    </section>
+
+    <section id="citation" class="section citation">
+      <div>
+        <p class="eyebrow">Citation</p>
+        <h2>BibTeX</h2>
+      </div>
+      <pre><code>@inproceedings{lei2026agenthoi,
+  title={Unleashing Multimodal Large Language Models for Training-free HOI Detection in the Wild},
+  author={Lei, Ting and Liu, Jialin and Xu, Zhu and Peng, Yuxin and Liu, Yang},
+  booktitle={European Conference on Computer Vision},
+  year={2026}
+}</code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>AgentHOI. Code released at <a href="https://github.com/oceanflowlab/AgentHOI">github.com/oceanflowlab/AgentHOI</a>.</p>
+  </footer>
+</body>
+</html>

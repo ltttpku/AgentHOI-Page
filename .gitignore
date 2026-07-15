@@ -1,0 +1,10 @@
+assets/*
+!assets/figures/
+assets/figures/*
+!assets/figures/teaser.png
+!assets/figures/AgentHOI_v2.png
+!assets/figures/demo.png
+!assets/figures/metrics2round.png
+!assets/figures/query2.png
+!assets/figures/query3.png
+!assets/figures/framework.jpg
