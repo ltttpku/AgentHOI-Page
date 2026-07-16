@@ -191,6 +191,7 @@ main {
 
 .wide-media,
 .media-frame {
+  margin: 0;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -200,6 +201,15 @@ main {
 
 .wide-media img,
 .media-frame img {
+  background: var(--white);
+}
+
+.teaser-figure figcaption,
+.qualitative-figure figcaption {
+  padding: 16px 18px 18px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
   background: var(--white);
 }
 
@@ -260,6 +270,29 @@ h3 {
 
 .split.reverse {
   grid-template-columns: 1.04fr 0.96fr;
+}
+
+.method-section {
+  display: grid;
+  gap: 24px;
+}
+
+.method-media img {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.text-section {
+  padding-top: 34px;
+}
+
+.qualitative {
+  padding-top: 38px;
+}
+
+.qualitative-figure img {
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .result-grid {

@@ -1,4 +1,5 @@
 assets/*
+!assets/agenthoi-supp-fig5.png
 !assets/figures/
 assets/figures/*
 !assets/figures/teaser.png

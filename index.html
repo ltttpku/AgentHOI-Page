@@ -51,9 +51,15 @@
 
   <main>
     <section class="teaser-section" aria-label="Project teaser">
-      <div class="wide-media">
+      <figure class="wide-media teaser-figure">
         <img src="assets/figures/teaser.png" alt="AgentHOI compares traditional supervised HOI detectors with a training-free agentic framework.">
-      </div>
+        <figcaption>
+          Unlike traditional HOI detectors that rely on task-specific annotated
+          data and fixed vocabularies, AgentHOI coordinates perception and
+          localization foundation modules to discover and ground interactions
+          without HOI-specific training.
+        </figcaption>
+      </figure>
     </section>
 
     <section id="abstract" class="section">
@@ -91,8 +97,8 @@
       </article>
     </section>
 
-    <section id="method" class="section split">
-      <div>
+    <section id="method" class="section method-section">
+      <div class="section-heading">
         <p class="eyebrow">Method</p>
         <h2>Agentic reasoning and localization</h2>
         <p class="body-text">
@@ -102,16 +108,13 @@
           enriches grounding prompts with semantic, spatial, and appearance cues.
         </p>
       </div>
-      <div class="media-frame">
+      <div class="media-frame method-media">
         <img src="assets/figures/AgentHOI_v2.png" alt="AgentHOI pipeline with multi-round reasoning and interaction localization.">
       </div>
     </section>
 
-    <section class="section split reverse">
-      <div class="media-frame">
-        <img src="assets/figures/demo.png" alt="Example showing initial HOI identification, re-mining, and action reassignment.">
-      </div>
-      <div>
+    <section class="section text-section">
+      <div class="section-heading">
         <p class="eyebrow">Reasoning</p>
         <h2>Recovering incomplete interactions</h2>
         <p class="body-text">
@@ -187,6 +190,24 @@
           </figcaption>
         </figure>
       </div>
+    </section>
+
+    <section class="section qualitative">
+      <div class="section-heading">
+        <p class="eyebrow">Visualization</p>
+        <h2>Qualitative results</h2>
+        <p class="body-text">
+          AgentHOI produces structured interaction predictions with localized
+          human-object pairs across diverse real-world scenes.
+        </p>
+      </div>
+      <figure class="wide-media qualitative-figure">
+        <img src="assets/agenthoi-supp-fig5.png" alt="Qualitative AgentHOI visualization results with localized human-object interaction predictions.">
+        <figcaption>
+          Blue and yellow annotations compare detected interaction concepts and
+          localized human-object instances in representative HICO-DET examples.
+        </figcaption>
+      </figure>
     </section>
 
     <section id="citation" class="section citation">
