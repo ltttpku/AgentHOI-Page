@@ -51,15 +51,15 @@
 
   <main>
     <section class="teaser-section" aria-label="Project teaser">
-      <figure class="wide-media teaser-figure">
+      <div class="wide-media teaser-figure">
         <img src="assets/figures/teaser.png" alt="AgentHOI compares traditional supervised HOI detectors with a training-free agentic framework.">
-        <figcaption>
-          Unlike traditional HOI detectors that rely on task-specific annotated
-          data and fixed vocabularies, AgentHOI coordinates perception and
-          localization foundation modules to discover and ground interactions
-          without HOI-specific training.
-        </figcaption>
-      </figure>
+      </div>
+      <p class="teaser-caption">
+        Unlike traditional HOI detectors that rely on task-specific annotated
+        data and fixed vocabularies, AgentHOI coordinates perception and
+        localization foundation modules to discover and ground interactions
+        without HOI-specific training.
+      </p>
     </section>
 
     <section id="abstract" class="section">
@@ -98,7 +98,7 @@
     </section>
 
     <section id="method" class="section method-section">
-      <div class="section-heading">
+      <div class="section-heading full-width">
         <p class="eyebrow">Method</p>
         <h2>Agentic reasoning and localization</h2>
         <p class="body-text">
@@ -110,19 +110,6 @@
       </div>
       <div class="media-frame method-media">
         <img src="assets/figures/AgentHOI_v2.png" alt="AgentHOI pipeline with multi-round reasoning and interaction localization.">
-      </div>
-    </section>
-
-    <section class="section text-section">
-      <div class="section-heading">
-        <p class="eyebrow">Reasoning</p>
-        <h2>Recovering incomplete interactions</h2>
-        <p class="body-text">
-          In cluttered scenes, a single MLLM query may focus on only the most
-          salient triplets. AgentHOI uses identified interactions as contextual
-          anchors, re-mines additional HOIs, and reassigns fine-grained actions
-          to improve interaction completeness.
-        </p>
       </div>
     </section>
 
@@ -204,8 +191,9 @@
       <figure class="wide-media qualitative-figure">
         <img src="assets/agenthoi-supp-fig5.png" alt="Qualitative AgentHOI visualization results with localized human-object interaction predictions.">
         <figcaption>
-          Blue and yellow annotations compare detected interaction concepts and
-          localized human-object instances in representative HICO-DET examples.
+          Visualization of original annotations (left) and the additional
+          interactions supplemented by AgentHOI (right). Only the newly added
+          interactions are shown on the right to keep the visualization concise.
         </figcaption>
       </figure>
     </section>
